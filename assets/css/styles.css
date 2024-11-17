@@ -1,0 +1,21 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.sidebar {
+    height: 100vh;
+    padding-top: 20px;
+}
+
+.sidebar .nav-link {
+    font-size: 1.1rem;
+    padding: 15px;
+}
+
+.sidebar .nav-link i {
+    margin-right: 10px;
+}
+
+.card {
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15) !important;
+}

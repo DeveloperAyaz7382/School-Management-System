@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Management System</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Full height for body and sidebar */
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        .container-fluid {
+            display: flex;
+            height: 100vh; /* Full viewport height */
+        }
+        #sidebar {
+            height: 100%; /* Full height for sidebar */
+        }
+        .main-content {
+            flex: 1; /* Allows this to grow and fill the available space */
+            overflow-y: auto; /* Enable scrolling for main content */
+        }
+        /* Ensures footer is at the bottom */
+        .footer {
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Container -->
+    <div class="container-fluid">
+        <div class="row flex-fill">
+            <!-- Sidebar -->
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" href="index.html">
+                                <i class="fas fa-tachometer-alt"></i> Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="student.html">
+                                <i class="fas fa-users"></i> Students
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="teacher.html">
+                                <i class="fas fa-chalkboard-teacher"></i> Teachers
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="classes.html">
+                                <i class="fas fa-book"></i> Classes
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="exams.html">
+                                <i class="fas fa-pencil-alt"></i> Exams
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="account.html">
+                                <i class="fas fa-user"></i> Account
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="signout.html">
+                                <i class="fas fa-sign-out-alt"></i> Sign Out
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            
+            
+            <!-- Main Dashboard Content -->
+            <main role="main" class="main-content col-md-9 ml-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">School Management System</h1>
+                </div>
+
+                   <!-- Fees Table -->
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Fee Type</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Due Date</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Tuition Fee</td>
+                    <td>$500</td>
+                    <td>2024-09-01</td>
+                    <td>Unpaid</td>
+                    <td><button class="btn btn-primary">Pay Now</button></td>
+                </tr>
+                <tr>
+                    <td>Library Fee</td>
+                    <td>$50</td>
+                    <td>2024-09-01</td>
+                    <td>Paid</td>
+                    <td><button class="btn btn-secondary" disabled>Paid</button></td>
+                </tr>
+                <tr>
+                    <td>Activity Fee</td>
+                    <td>$75</td>
+                    <td>2024-09-15</td>
+                    <td>Unpaid</td>
+                    <td><button class="btn btn-primary">Pay Now</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="text-center mt-4">
+            <h4>Total Amount Due: $625</h4>
+        </div>
+
+        <!-- Payment Form -->
+        <div class="mt-4">
+            <h5>Make a Payment</h5>
+            <form action="payment.php" method="post">
+                <div class="form-group">
+                    <label for="amount">Amount</label>
+                    <input type="number" class="form-control" id="amount" name="amount" required>
+                </div>
+                <div class="form-group">
+                    <label for="payment-method">Payment Method</label>
+                    <select class="form-control" id="payment-method" name="payment_method" required>
+                        <option value="" disabled selected>Select Payment Method</option>
+                        <option value="credit_card">Credit Card</option>
+                        <option value="paypal">PayPal</option>
+                        <option value="bank_transfer">Bank Transfer</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-success">Submit Payment</button>
+            </form>
+  
+        </div>
+    </div>
+
+            </main>
+          
+        </div>
+      
+    </div>
+    
+ 
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3 bg-dark text-white text-center">
+        <div class="container">
+            <span>© Created by Jawad Khan & Akhtar Hussain School Management System</span>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Management System</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Main Container -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" href="index.html">
+                                <i class="fas fa-tachometer-alt"></i> Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="student.html">
+                                <i class="fas fa-users"></i> Students
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="teacher.html">
+                                <i class="fas fa-chalkboard-teacher"></i> Teachers
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="classes.html">
+                                <i class="fas fa-book"></i> Classes
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="exams.html">
+                                <i class="fas fa-pencil-alt"></i> Exams
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="account.html">
+                                <i class="fas fa-user"></i> Account
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="signout.html">
+                                <i class="fas fa-sign-out-alt"></i> Sign Out
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            
+            
+            
+            <!-- Main Dashboard Content -->
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">School Management System</h1>
+                </div>
+
+
+              
+                <div class="container mt-5">
+                    <h2 class="mb-4">Student Registration Form</h2>
+                    <form action="index.html" method="post">
+                        <!-- ID Field -->
+                        <div class="form-group">
+                            <label for="studentID">Student ID</label>
+                            <input type="text" class="form-control" id="studentID" name="studentID" placeholder="Enter Student ID" required>
+                        </div>
+            
+                        <!-- Name Field -->
+                        <div class="form-group">
+                            <label for="studentName">Name</label>
+                            <input type="text" class="form-control" id="studentName" name="studentName" placeholder="Enter Student's Name" required>
+                        </div>
+            
+                        <!-- Father's Name Field -->
+                        <div class="form-group">
+                            <label for="fatherName">Father's Name</label>
+                            <input type="text" class="form-control" id="fatherName" name="fatherName" placeholder="Enter Father's Name" required>
+                        </div>
+            
+                        <!-- Address Field -->
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <input type="text" class="form-control" id="address" name="address" placeholder="Enter Address" required>
+                        </div>
+            
+                        <!-- Contact No Field -->
+                        <div class="form-group">
+                            <label for="contactNo">Contact No</label>
+                            <input type="tel" class="form-control" id="contactNo" name="contactNo" placeholder="Enter Contact Number" required>
+                        </div>
+            
+                        <!-- Class Field -->
+                        <div class="form-group">
+                            <label for="class">Class</label>
+                            <select class="form-control" id="class" name="class" required>
+                                <option value="">Select Class</option>
+                                <option value="Grade 1">Grade 1</option>
+                                <option value="Grade 2">Grade 2</option>
+                                <option value="Grade 3">Grade 3</option>
+                                <option value="Grade 4">Grade 4</option>
+                                <option value="Grade 5">Grade 5</option>
+                                <!-- Add more class options as needed -->
+                            </select>
+                        </div>
+            
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn-primary">Register Student</button>
+                    </form>
+                </div>
+                      
+                <br>
+                <br> 
+               
+                        </main>
+                    </div>
+                </div>
+            
+             
+            </main>
+        </div>
+    </div>
+
+  
+    <footer class="footer mt-auto py-3 bg-dark text-white text-center">
+        <div class="container">
+            <span>© Created by Jawad Khan & Akhtar Hussain School Management System</span>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var ctx = document.getElementById('studentChart').getContext('2d');
+        var studentChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Grade 1', 'Grade 2', 'Grade 3', 'Grade 4', 'Grade 5'],
+                datasets: [{
+                    label: 'Students per Grade',
+                    data: [200, 300, 400, 250, 150],
+                    backgroundColor: ['#007bff', '#28a745', '#ffc107', '#dc3545', '#17a2b8']
+                }]
+            },
+            options: {
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
+
+    
+  
